@@ -9,8 +9,6 @@ const app = express();
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-const { keepRenderAlive } = require("./utils/cron.js");
-
 require("dotenv").config();
 
 var daysRouter = require("./routes/days");
@@ -68,5 +66,4 @@ mongoose
     });
   });
 
-//start cron job to keep server alive
-keepRenderAlive.start();
+module.exports = app;
